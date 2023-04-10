@@ -25,6 +25,7 @@ function startBlinking() {
     input.minPause(),
     input.maxPause()
   );
+  
 }
 
 function blink(element) {
