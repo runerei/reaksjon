@@ -1,60 +1,86 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8" />
-    <title>Reaksjonstrenar</title>    
+    <title>Reaksjonstrenar</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
     <style>
-		body {
-			background-color: white;
-		}
-		.blink {
-			animation: blink 0.5s infinite;
-            background-color: grey;
-		}
-		@keyframes blink {
-			0% {opacity: 0;}
-			50% {opacity: 1;}
-			100% {opacity: 0;}
-		}
+        body {
+            background-color: white;
+        }
 
-		.finished {
-			animation: blink 0.5s infinite;
+        .blink {
+            animation: blink 0.5s infinite;
+            background-color: grey;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        input {
+            margin-bottom: 20px;
+        }
+
+        .finished {
+            animation: blink 0.5s infinite;
             color: green;
-		}
-		@keyframes finished {
-			0% {opacity: 0;}
-			50% {opacity: 1;}
-			100% {opacity: 0;}
-		}        
-	</style>
+        }
+
+        @keyframes finished {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
 
 </head>
+
 <body id="blinker">
     <h1>Reaksjonstimer</h1>
     <form>
-        <label for="repetitions">Repetisjonar:</label>
+        <label for="repetitions">Repetisjonar:</label></br>
         <input type="number" id="repetitions" name="repetitions" value="10" min="1">
-
-        <label for="minPause">Pause (minimum):</label>
+        </br>
+        <label for="minPause">Pause (minimum):</label></br>
         <input type="number" id="minPause" name="minPause" value="1" min="1">
-
-
-        <label for="maxPause">Pause (maximum):</label>
+        </br>
+        <label for="maxPause">Pause (maximum):</label></br>
         <input type="number" id="maxPause" name="maxPause" value="5" min="2">
-
+        </br>
         <button type="button" onclick="updateCount()">Update</button>
     </form>
-    
-    <p>Pause: <span id="minPause-display">0</span> minimum -  <span id="maxPause-display">0</span> maximum</p>
+
+    <p>Pause: <span id="minPause-display">0</span> minimum - <span id="maxPause-display">0</span> maximum</p>
 
     <div></div><button onclick="startBlinking()">Start Blinking</button></div>
 
-    <h2 id="reps">Repetisjonar: <span id="currentRepetition-display">0</span>/<span id="repetitions-display">0</span></h2>
+    <h2 id="reps">Repetisjonar: <span id="currentRepetition-display">0</span>/<span id="repetitions-display">0</span>
+    </h2>
 </body>
 <script src="reaksjon.js"></script>
+
 </html>
