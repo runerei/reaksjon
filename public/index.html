@@ -21,10 +21,21 @@
 			50% {opacity: 1;}
 			100% {opacity: 0;}
 		}
+
+		.finished {
+			animation: blink 0.5s infinite;
+            color: green;
+		}
+		@keyframes finished {
+			0% {opacity: 0;}
+			50% {opacity: 1;}
+			100% {opacity: 0;}
+		}        
 	</style>
 
 </head>
 <body id="blinker">
+    <h1>Reaksjonstimer</h1>
     <form>
         <label for="repetitions">Repetisjonar:</label>
         <input type="number" id="repetitions" name="repetitions" value="10" min="1">
@@ -37,12 +48,13 @@
         <input type="number" id="maxPause" name="maxPause" value="5" min="2">
 
         <button type="button" onclick="updateCount()">Update</button>
-      </form>
-      <p>Pause: <span id="minPause-display">0</span> minimum -  <span id="maxPause-display">0</span> maximum</p>
+    </form>
+    
+    <p>Pause: <span id="minPause-display">0</span> minimum -  <span id="maxPause-display">0</span> maximum</p>
 
-      <p>Repetisjonar: <span id="currentRepetition-display">0</span>/<span id="repetitions-display">0</span></p>
+    <div></div><button onclick="startBlinking()">Start Blinking</button></div>
 
-      <div></div><button onclick="startBlinking()">Start Blinking</button></div>
+    <h2 id="reps">Repetisjonar: <span id="currentRepetition-display">0</span>/<span id="repetitions-display">0</span></h2>
 </body>
 <script src="reaksjon.js"></script>
 </html>

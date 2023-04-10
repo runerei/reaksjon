@@ -34,6 +34,15 @@ function blink(element) {
   }, 500);
 }
 
+function blinkFinished(element) {
+  setTimeout(function () {
+    element.classList.add('finished');
+    setTimeout(function () {
+      element.classList.remove('finished');
+    }, 500);
+  }, 1000);
+}
+
 function startBlinkingTimer(repetitions, currentRepetition, minPause, maxPause) {
 
   let element = document.getElementById("blinker");
@@ -48,6 +57,9 @@ function startBlinkingTimer(repetitions, currentRepetition, minPause, maxPause) 
       }, 
       randomPauseMs()
       );
+  } else {
+    console.log("Finished!!")
+    blinkFinished(document.getElementById("reps"));
   }
 }
 
