@@ -1,14 +1,32 @@
 let input = {
-  repetitions: () => document.getElementById("repetitions").value,
-  minPause: () => document.getElementById("minPause").value,
-  maxPause: () => document.getElementById("maxPause").value
+  repetitions: () => document.getElementById("repetitions"),
+  minPause: () => document.getElementById("minPause"),
+  maxPause: () => document.getElementById("maxPause")
+}
+
+let display = {
+  repetitions: () => document.getElementById("repetitions-display"),
+  minPause: () => document.getElementById("minPause-display"),
+  maxPause: () => document.getElementById("maxPause-display")
 }
 
 function updateCount() {
-  document.getElementById("repetitions-display").innerHTML = input.repetitions();
-  document.getElementById("minPause-display").innerHTML = input.minPause();
-  document.getElementById("maxPause-display").innerHTML = input.maxPause();
+  display.repetitions().innerHTML = input.repetitions().value;
+  display.minPause().innerHTML = input.minPause().value;
+  display.maxPause().innerHTML = input.maxPause().value;
 }
+
+input.repetitions().addEventListener('input', (event) => {
+  display.repetitions().innerHTML = event.target.value;
+});
+
+input.minPause().addEventListener('input', (event) => {
+  display.minPause().innerHTML = event.target.value;
+});
+
+input.maxPause().addEventListener('input', (event) => {
+  display.maxPause().innerHTML = event.target.value;
+});
 
 function updateCurrentRepetitionDisplay(currentRepetition) {
   document.getElementById("currentRepetition-display").innerHTML = currentRepetition;
@@ -20,12 +38,11 @@ function randomIntFromInterval(min, max) { // min and max included
 
 function startBlinking() {
   startBlinkingTimer(
-    input.repetitions(),
+    input.repetitions().value,
     0,
-    input.minPause(),
-    input.maxPause()
+    input.minPause().value,
+    input.maxPause().value
   );
-  
 }
 
 function blink(element) {
