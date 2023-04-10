@@ -19,6 +19,7 @@ Enkel html og javascript i src-katalogen vert kopiert til S3.
 
 ## Anna
 Emoji frå https://favicon.io/emoji-favicons/fireworks
+Lyd frå https://www.freesoundslibrary.com/bonk-sound-effect/
 
 
 ## TODO
