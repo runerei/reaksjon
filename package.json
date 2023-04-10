@@ -1,0 +1,13 @@
+{
+  "name": "reaksjon",
+  "version": "1.0.0",
+  "description": "Reager på blink.",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "scripts": {
+    "start": "http-server"
+  }
+}
