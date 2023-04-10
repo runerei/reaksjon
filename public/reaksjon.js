@@ -3,7 +3,6 @@ let input = {
   minPause: () => document.getElementById("minPause").value,
   maxPause: () => document.getElementById("maxPause").value
 }
-// const repetitions = () => document.getElementById("repetitions").value;
 
 function updateCount() {
   document.getElementById("repetitions-display").innerHTML = input.repetitions();
@@ -38,7 +37,7 @@ function blink(element) {
 function startBlinkingTimer(repetitions, currentRepetition, minPause, maxPause) {
 
   let element = document.getElementById("blinker");
-  // let randomPauseMs = () => randomIntFromInterval(minPause, maxPause)*1000
+  let randomPauseMs = () => randomIntFromInterval(minPause, maxPause)*1000
 
   if (currentRepetition < repetitions) {      
     setTimeout(() => {   
@@ -47,7 +46,7 @@ function startBlinkingTimer(repetitions, currentRepetition, minPause, maxPause) 
         blink(element)        
         startBlinkingTimer(repetitions, currentRepetition, minPause, maxPause)
       }, 
-      randomIntFromInterval(minPause, maxPause)*1000
+      randomPauseMs()
       );
   }
 }
