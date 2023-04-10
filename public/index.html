@@ -14,7 +14,7 @@
 		}
 		.blink {
 			animation: blink 0.5s infinite;
-            background-color: blue;
+            background-color: grey;
 		}
 		@keyframes blink {
 			0% {opacity: 0;}
@@ -30,11 +30,11 @@
         <input type="number" id="repetitions" name="repetitions" value="10" min="1">
 
         <label for="minPause">Pause (minimum):</label>
-        <input type="number" id="minPause" name="minPause" value="0" min="0">
+        <input type="number" id="minPause" name="minPause" value="1" min="1">
 
 
         <label for="maxPause">Pause (maximum):</label>
-        <input type="number" id="maxPause" name="maxPause" value="0" min="0">
+        <input type="number" id="maxPause" name="maxPause" value="5" min="2">
 
         <button type="button" onclick="updateCount()">Update</button>
       </form>
